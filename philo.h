@@ -6,7 +6,7 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 23:10:03 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/06/30 15:56:53 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/06/30 23:07:22 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # define FALSE		0
 # define EATING		1
 # define SLEEPING	2
-# define THINKING	3
 
 # include <pthread.h>
 
