@@ -6,7 +6,7 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 23:10:03 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/06/30 23:07:22 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/06/30 23:44:45 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ typedef struct s_philo {
 typedef struct s_info {
 	int				num_philo;
 	int				num_must_eat;
-	int 			eat_check;
+	int				eat_check;
 	int				die_check;
 	t_ull			time_to_die;
 	t_ull			time_to_eat;
@@ -45,13 +45,12 @@ typedef struct s_info {
 	t_ull			start_time;
 	pthread_mutex_t	start_mutex;
 	pthread_mutex_t	buffer_mutex;
-	pthread_mutex_t *forks_mutex;
+	pthread_mutex_t	*forks_mutex;
 	t_philo			*philos;
 }	t_info;
 
 int		check_arguments(int argc, char **argv);
 int		init_info(int argc, char **argv, t_info *info);
-int		print_how_to_use(void);
 int		ft_philo_start(t_info *info, t_philo *philo);
 int		ft_print_error(char *str);
 void	p_printf(t_info *info, int p_id, char *str);

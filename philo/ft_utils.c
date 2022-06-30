@@ -6,13 +6,11 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 23:09:59 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/06/30 15:49:00 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/06/30 23:15:44 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "philo.h"
-#include <time.h>
 #include <stdio.h>
 
 static int	my_space(char c)

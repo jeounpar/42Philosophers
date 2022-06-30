@@ -6,15 +6,12 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 23:09:49 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/06/30 15:57:08 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/06/30 23:19:42 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "philo.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 static int	init_philo(t_info *info)
 {
@@ -55,15 +52,6 @@ static int	init_mutex(t_info *info)
 			return (FALSE);
 		i++;
 	}
-	return (TRUE);
-}
-
-static int	check_info(t_info *info)
-{
-	if (info->num_philo < 2
-		|| info->time_to_die < 60 || info->time_to_eat < 60
-		|| info->time_to_sleep < 60)
-		return (FALSE);
 	return (TRUE);
 }
 

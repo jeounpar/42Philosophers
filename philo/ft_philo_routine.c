@@ -6,20 +6,18 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 23:09:55 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/06/30 15:57:27 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/06/30 23:43:30 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 #include <unistd.h>
-#include <pthread.h>
 #include <stdlib.h>
-#include <stdio.h>
 
 static void	philo_eat(t_info *info, t_philo *philo)
 {
-	p_printf(info, philo->p_id, "is eating");
 	philo->time = get_time();
+	p_printf(info, philo->p_id, "is eating");
 	(philo->eat_cnt)++;
 	ft_usleep(info, EATING);
 }
@@ -46,7 +44,7 @@ static void	*ft_philo_func(void *data)
 	philo = (t_philo *)data;
 	info = philo->info;
 	if (philo->p_id % 2)
-		usleep(10000);
+		usleep(100);
 	while (!(info->die_check))
 	{
 		if (philo_routine(info, philo))
@@ -77,21 +75,19 @@ void	ft_end_philo(t_info *info, t_philo *philo)
 int	ft_philo_start(t_info *info, t_philo *philo)
 {
 	int		i;
-	t_ull	current_time;
 	void	*philo_data;
 
 	i = 0;
-	pthread_mutex_lock(&info->start_mutex);
 	info->start_time = get_time();
 	while (i < info->num_philo)
 	{	
 		philo[i].time = get_time();
 		philo_data = (void *)&(philo[i]);
-		if (pthread_create(&(philo[i].philo_thread), NULL, ft_philo_func, philo_data))
+		if (pthread_create(&(philo[i].philo_thread), NULL
+				, ft_philo_func, philo_data))
 			return (FALSE);
 		i++;
 	}
-	pthread_mutex_unlock(&info->start_mutex);
 	ft_death_check(info, info->philos);
 	ft_end_philo(info, info->philos);
 	return (TRUE);

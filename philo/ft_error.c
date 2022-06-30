@@ -6,28 +6,21 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 23:09:42 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/06/30 14:15:37 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/06/30 23:45:17 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "philo.h"
 #include <stdio.h>
 
-int	print_how_to_use()
+static int	print_how_to_use(void)
 {
 	printf("./philo number_of_philosophers time_to_die time_to ");
 	printf("eat time_to_sleep [number_of_times_each_philosopher_must_eat]\n");
 	return (1);
 }
 
-int	ft_print_error(char *str)
-{
-	printf("%s\n", str);
-	return FALSE;
-}
-
-int	check_minus(int argc, char **argv)
+static int	check_minus(int argc, char **argv)
 {
 	int	i;
 	int	j;
@@ -45,6 +38,13 @@ int	check_minus(int argc, char **argv)
 		i++;
 	}
 	return (TRUE);
+}
+
+int	ft_print_error(char *str)
+{
+	print_how_to_use();
+	printf("%s\n", str);
+	return (FALSE);
 }
 
 int	check_arguments(int argc, char **argv)
