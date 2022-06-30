@@ -6,7 +6,7 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 18:12:49 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/06/30 23:14:01 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/06/30 23:57:33 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,13 @@ void	ft_death_check(t_info *info, t_philo *philo)
 		i = 0;
 		while ((i < info->num_philo) && (!(info->die_check)))
 		{
+			pthread_mutex_lock(&info->state_mutex);
 			if ((get_time() - philo[i].time) > info->time_to_die)
 			{
 				p_printf(info, i, "died");
 				info->die_check = 1;
 			}
-			usleep(10);
+			pthread_mutex_unlock(&info->state_mutex);
 			i++;
 		}
 		if (info->die_check)

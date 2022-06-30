@@ -6,7 +6,7 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 23:09:55 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/06/30 23:43:30 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/06/30 23:56:57 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,12 @@ void	ft_end_philo(t_info *info, t_philo *philo)
 	i = 0;
 	while (i < info->num_philo)
 		pthread_detach(philo[i++].philo_thread);
-	free(info->philos);
-	free(info->forks_mutex);
 	i = 0;
 	while (i < info->num_philo)
 		pthread_mutex_destroy(&(info->forks_mutex[i++]));
-	pthread_mutex_destroy(&(info->start_mutex));
+	free(info->philos);
+	free(info->forks_mutex);
+	pthread_mutex_destroy(&(info->state_mutex));
 	pthread_mutex_destroy(&(info->buffer_mutex));
 }
 
