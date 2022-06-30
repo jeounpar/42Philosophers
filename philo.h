@@ -6,7 +6,7 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 23:10:03 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/06/26 18:23:24 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/06/30 15:56:53 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ typedef struct s_info {
 	t_ull			time_to_eat;
 	t_ull			time_to_sleep;
 	t_ull			start_time;
-	pthread_mutex_t	eating_mutex;
+	pthread_mutex_t	start_mutex;
 	pthread_mutex_t	buffer_mutex;
 	pthread_mutex_t *forks_mutex;
 	t_philo			*philos;

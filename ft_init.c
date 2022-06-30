@@ -6,7 +6,7 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 23:09:49 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/06/30 14:27:03 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/06/30 15:57:08 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static int	init_mutex(t_info *info)
 
 	if (pthread_mutex_init(&(info->buffer_mutex), NULL))
 		return (FALSE);
-	if (pthread_mutex_init(&(info->eating_mutex), NULL))
+	if (pthread_mutex_init(&(info->start_mutex), NULL))
 		return (FALSE);
 	info->forks_mutex = malloc(sizeof(pthread_mutex_t) * info->num_philo);
 	if (info->forks_mutex == NULL)

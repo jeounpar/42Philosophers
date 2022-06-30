@@ -6,15 +6,11 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 23:09:52 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/06/30 14:16:56 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/06/30 14:51:57 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <pthread.h>
 
 int	main(int argc, char **argv)
 {

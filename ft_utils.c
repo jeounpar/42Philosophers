@@ -6,7 +6,7 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 23:09:59 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/06/30 14:20:08 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/06/30 15:49:00 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	p_printf(t_info *info, int p_id, char *str)
 	pthread_mutex_lock(&(info->buffer_mutex));
 	if (!(info->die_check))
 	{
-		printf("%lldms\t%d %s\n", get_time() - info->start_time,
+		printf("%lld\t%d %s\n", get_time() - info->start_time,
 			p_id + 1, str);
 	}
 	pthread_mutex_unlock(&(info->buffer_mutex));
