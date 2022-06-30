@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo_routine.c                                    :+:      :+:    :+:   */
+/*   ft_philo_routine.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 23:09:55 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/06/26 18:23:24 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/06/30 14:25:30 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,5 @@ int	ft_philo_start(t_info *info, t_philo *philo)
 	}
 	ft_death_check(info, info->philos);
 	ft_end_philo(info, info->philos);
-	return (0);
+	return (TRUE);
 }

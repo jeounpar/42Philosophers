@@ -6,7 +6,7 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 23:09:42 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/06/26 18:05:12 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/06/30 14:15:37 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,6 @@ int	ft_print_error(char *str)
 {
 	printf("%s\n", str);
 	return FALSE;
-}
-
-void	print_arg_num_error()
-{
-	printf("Program argc need 5 or 6 arguments\n");
-}
-
-void	print_arg_minus_error()
-{
-	printf("arguments must be positive number\n");
 }
 
 int	check_minus(int argc, char **argv)
@@ -60,14 +50,8 @@ int	check_minus(int argc, char **argv)
 int	check_arguments(int argc, char **argv)
 {
 	if (argc != 5 && argc != 6)
-	{
-		ft_print_error("Program argc need 5 or 6 arguments");
 		return (FALSE);
-	}
 	if (check_minus(argc, argv) == FALSE)
-	{
-		ft_print_error("Arguments must be positive number");
 		return (FALSE);
-	}
 	return (TRUE);
 }

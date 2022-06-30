@@ -6,7 +6,7 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 18:34:48 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/06/26 18:02:33 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/06/30 13:36:19 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,6 @@ void	ft_usleep(t_info *info, int type)
 		current_time = get_time();
 		if ((current_time - tmp_time) >= target_time)
 			break ;
-		usleep(2);
+		usleep(100);
 	}
 }

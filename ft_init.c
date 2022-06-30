@@ -6,7 +6,7 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 23:09:49 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/06/26 18:23:24 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/06/30 14:27:03 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,9 @@ static int	init_mutex(t_info *info)
 
 static int	check_info(t_info *info)
 {
-	if (info->num_must_eat < 2 || info->num_philo > 200
+	if (info->num_philo < 2
 		|| info->time_to_die < 60 || info->time_to_eat < 60
-		|| info->time_to_sleep < 60 || info->num_must_eat <= 0)
+		|| info->time_to_sleep < 60)
 		return (FALSE);
 	return (TRUE);
 }
@@ -83,8 +83,6 @@ int	init_info(int argc, char **argv, t_info *info)
 		if (info->num_must_eat <= 0)
 			return (FALSE);
 	}
-	// if (check_info(info) == FALSE)
-	// 	return (FALSE);
 	if (init_mutex(info) == FALSE)
 		return (FALSE);
 	if (init_philo(info) == FALSE)

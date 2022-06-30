@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 23:09:59 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/06/26 18:29:04 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/06/30 14:20:08 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,7 @@ void	p_printf(t_info *info, int p_id, char *str)
 	pthread_mutex_lock(&(info->buffer_mutex));
 	if (!(info->die_check))
 	{
-		// printf("%lld %d %s eat_cnt = %d, eat_check = %d\n", get_time() - info->start_time,
-		// 	p_id + 1, str, info->philos[p_id].eat_cnt, info->eat_check);
-		printf("%lld %d %s\n", get_time() - info->start_time,
+		printf("%lldms\t%d %s\n", get_time() - info->start_time,
 			p_id + 1, str);
 	}
 	pthread_mutex_unlock(&(info->buffer_mutex));
