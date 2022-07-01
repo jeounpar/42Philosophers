@@ -1,0 +1,12 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/park/42cursus/42Philosophers/philo'
+cc -Wall -Wextra -Werror   -c -o ft_death_check.o ft_death_check.c
+cc -Wall -Wextra -Werror   -c -o ft_error.o ft_error.c
+cc -Wall -Wextra -Werror   -c -o ft_init.o ft_init.c
+cc -Wall -Wextra -Werror   -c -o ft_philo_routine.o ft_philo_routine.c
+cc -Wall -Wextra -Werror   -c -o ft_time.o ft_time.c
+cc -Wall -Wextra -Werror   -c -o ft_utils.o ft_utils.c
+cc -Wall -Wextra -Werror   -c -o main.o main.c
+cc -Wall -Wextra -Werror -o philo ft_death_check.o ft_error.o ft_init.o ft_philo_routine.o ft_time.o ft_utils.o main.o
+make: Leaving directory `/Users/park/42cursus/42Philosophers/philo'
+ 

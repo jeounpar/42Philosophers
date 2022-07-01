@@ -6,7 +6,7 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 23:09:55 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/06/30 23:56:57 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/07/01 23:51:08 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static void	*ft_philo_func(void *data)
 	philo = (t_philo *)data;
 	info = philo->info;
 	if (philo->p_id % 2)
-		usleep(100);
+		usleep(1000);
 	while (!(info->die_check))
 	{
 		if (philo_routine(info, philo))
@@ -61,14 +61,18 @@ void	ft_end_philo(t_info *info, t_philo *philo)
 	int	i;
 
 	i = 0;
-	while (i < info->num_philo)
+	if (info->num_philo == 1)
 		pthread_detach(philo[i++].philo_thread);
+	else
+	{	
+		while (i < info->num_philo)
+			pthread_join(philo[i++].philo_thread, NULL);
+	}
 	i = 0;
 	while (i < info->num_philo)
 		pthread_mutex_destroy(&(info->forks_mutex[i++]));
 	free(info->philos);
 	free(info->forks_mutex);
-	pthread_mutex_destroy(&(info->state_mutex));
 	pthread_mutex_destroy(&(info->buffer_mutex));
 }
 
