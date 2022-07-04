@@ -6,7 +6,7 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 18:34:48 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/06/30 23:15:23 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/07/04 14:30:10 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_ull	get_time(void)
 	struct timeval	t;
 
 	gettimeofday(&t, NULL);
-	return (t.tv_sec * (t_ull) 1000 + t.tv_usec / 1000);
+	return (t_ull)(t.tv_sec * 1000 + t.tv_usec / 1000);
 }
 
 void	ft_usleep(t_info *info, int type)
