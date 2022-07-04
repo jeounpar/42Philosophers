@@ -6,7 +6,7 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 18:12:49 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/07/04 14:06:58 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/07/04 14:12:02 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 
 void	ft_eat_check(t_info *info, t_philo *philo)
 {
-	int	i;
+	int	philo_id;
 
-	i = 0;
-	while (info->num_must_eat > 0 && i < info->num_philo
-		&& philo[i].eat_cnt >= info->num_must_eat)
-		i++;
-	if (i == info->num_philo)
+	philo_id = 0;
+	while (info->num_must_eat > 0 && philo_id < info->num_philo
+		&& philo[philo_id].eat_cnt >= info->num_must_eat)
+		philo_id++;
+	if (philo_id == info->num_philo)
 		info->eat_check = 1;
 }
 
