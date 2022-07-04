@@ -6,13 +6,12 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 18:12:49 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/07/01 23:45:53 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/07/04 14:06:58 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 #include <unistd.h>
-#include <stdio.h>
 
 void	ft_eat_check(t_info *info, t_philo *philo)
 {

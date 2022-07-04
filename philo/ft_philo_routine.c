@@ -6,7 +6,7 @@
 /*   By: jeounpar <jeounpar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 23:09:55 by jeounpar          #+#    #+#             */
-/*   Updated: 2022/07/01 23:51:08 by jeounpar         ###   ########.fr       */
+/*   Updated: 2022/07/04 13:58:15 by jeounpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static void	*ft_philo_func(void *data)
 	philo = (t_philo *)data;
 	info = philo->info;
 	if (philo->p_id % 2)
-		usleep(1000);
+		usleep(10000);
 	while (!(info->die_check))
 	{
 		if (philo_routine(info, philo))
